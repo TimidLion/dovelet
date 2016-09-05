@@ -10,14 +10,16 @@ int main()
 		scanf("%d %d %d",&Si, &Ti, &Ri);
 		int page = 0;
 		int time = 0;
+		int counter = 0;
 		while(page < N)
 		{
 			page += Si;
 			time++;
+			counter++;
 			if(page >= N)
 				break;
-			if(time%Ti == j)
-				time +=Ri;
+			if(counter == Ti)
+			{	counter = 0; time += Ri;	}
 		}
 		printf("%d\n",time);
 	}
